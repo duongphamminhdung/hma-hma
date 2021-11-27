@@ -6,17 +6,14 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import static frc.robot.Constants.SUBSYSTEM.*;
-
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Sucker extends SubsystemBase {
   public WPI_TalonSRX sucker = new WPI_TalonSRX(SUCKER_ID);
   /** Creates a new Sucker. */
-  public Sucker() {}
-  public void suck(double speed){
-    sucker.set(speed);
+  public void suck(double speedu){
+    sucker.set(speedu);
   }
-
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

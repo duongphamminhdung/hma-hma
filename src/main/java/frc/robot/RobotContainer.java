@@ -14,7 +14,10 @@ import frc.robot.commands.DriveStraight;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveBase;
 import frc.robot.subsystems.ExampleSubsystem;
-
+import frc.robot.subsystems.Sucker;
+import frc.robot.commands.Suck;
+import frc.robot.subsystems.Shooter;
+import frc.robot.commands.Shoot;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -27,7 +30,11 @@ public class RobotContainer {
   public static  final Joystick taycam = new Joystick(Y);
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final DriveBase drivebase = new DriveBase();
-
+  private final Sucker m_Sucker = new Sucker();
+  private final Shooter m_shooter = new Shooter();
+  
+  Command Shoot = new Shoot(m_shooter, 1);
+  Command Suck = new Suck(m_Sucker, 1);
   Command drivestraight = new DriveStraight(drivebase, 0.8);
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
